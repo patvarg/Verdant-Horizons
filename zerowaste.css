@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #448083;
+    --secondary-color: #a5d6d3;
+    --background-color: #ffffff;
+    --font-family: 'Roboto', sans-serif;
+    --scrolled-color: linear-gradient(90deg, #88a8a3, #a5d6d3);
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    line-height: 1.6;
+    color: #333;
+    font-size: 1em;
+}
+
+.scroll-offset {
+    display: block;
+    height: 100px;
+    /* Adjust this value to create enough space */
+    margin-top: -100px;
+    /* This should be the negative value of height */
+    visibility: hidden;
+}
+
+/* Your other CSS rules */
+
+
+header {
+    transition: all 0.5s;
+    background: url('bulb.jpeg') no-repeat center center/cover;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: var(--primary-color);
+    padding: 50px 20px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header.shrink {
+    padding: 10px;
+    /* Adjust this value to make the header smaller */
+    position: sticky;
+    top: 100px;
+    bottom: 100px;
+    border-top-right-radius: 150px;
+    border-top-left-radius: 150px;
+    border-bottom-left-radius: 150px;
+    border-bottom-right-radius: 150px;
+}
+
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+header button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: var(--primary-color);
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+nav ul {
+    justify-content: center;
+    list-style-type: none;
+    padding: 10px 20px;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+}
+
+nav.scrolled ul li {
+    border: 2px solid var(--secondary-color);
+    border-radius: 20px;
+    /* Adjust as needed */
+    padding: 5px 10px;
+    /* Adjust as needed */
+    transition: border 0.3s ease;
+}
+
+.section {
+    padding: 50px;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.section p {
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.grid-container ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-container ul li:last-child {
+    grid-column: span 2;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 0.8em;
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: 1.5em;
+    }
+
+    .grid-container ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 50px;
+    bottom: 0;
+    width: 100%;
+    flex-shrink: 0;
+}
+
+.social-media-links a {
+    color: white;
+    margin: 0 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
+}
